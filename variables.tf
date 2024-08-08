@@ -43,7 +43,7 @@ variable "sql_instance_name" {
 variable "sku_name" {
   description = "The SKU name of the SQL Managed Instance."
   type        = string
-  default     = "GP_Gen5_8"
+  default     = "GP_Gen8IM"
 }
 
 variable "vcores" {
