@@ -55,5 +55,5 @@ variable "vcores" {
 variable "storage_size_in_gb" {
   description = "The storage size in GB for the SQL Managed Instance."
   type        = number
-  default     = 400
+  default     = 448
 }
