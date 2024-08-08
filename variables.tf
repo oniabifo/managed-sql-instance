@@ -7,7 +7,7 @@ variable "resource_group_name" {
 variable "location" {
   description = "The Azure location where resources will be created."
   type        = string
-  default     = "West Europe"
+  default     = "Canada Central"
 }
 
 variable "vnet_name" {
@@ -55,5 +55,5 @@ variable "vcores" {
 variable "storage_size_in_gb" {
   description = "The storage size in GB for the SQL Managed Instance."
   type        = number
-  default     = 32
+  default     = 400
 }

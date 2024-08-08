@@ -73,7 +73,7 @@ resource "azurerm_network_security_rule" "allow_on_premises_inbound" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_ranges     = ["1433"]
-  source_address_prefix       = "<On-Premises IP Address or Range>"
+  source_address_prefix       = "104.184.163.80"
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.az-rg-details.name
   network_security_group_name = azurerm_network_security_group.sql-nsg.name
