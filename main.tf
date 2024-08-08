@@ -81,20 +81,6 @@ resource "azurerm_network_security_rule" "deny_all_inbound" {
   network_security_group_name = azurerm_network_security_group.sql-nsg.name
 }
 
-resource "azurerm_network_security_rule" "allow_management_outbound" {
-  name                        = "allow_management_outbound"
-  priority                    = 102
-  direction                   = "Outbound"
-  access                      = "Allow"
-  protocol                    = "Tcp"
-  source_port_range           = "*"
-  destination_port_ranges     = ["80", "443", "12000"]
-  source_address_prefix       = "*"
-  destination_address_prefix  = "*"
-  resource_group_name         = azurerm_resource_group.az-rg-details.name
-  network_security_group_name = azurerm_network_security_group.sql-nsg.name
-}
-
 resource "azurerm_network_security_rule" "allow_misubnet_outbound" {
   name                        = "allow_misubnet_outbound"
   priority                    = 200
