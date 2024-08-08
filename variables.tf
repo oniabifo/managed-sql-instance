@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   description = "The name of the resource group."
   type        = string
-  default     = "clickclaims-prod-01"
+  default     = "clickclaims-rgp-prod-01"
 }
 
 variable "location" {
