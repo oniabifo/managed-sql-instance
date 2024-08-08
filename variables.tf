@@ -43,17 +43,17 @@ variable "sql_instance_name" {
 variable "sku_name" {
   description = "The SKU name of the SQL Managed Instance."
   type        = string
-  default     = "GP_Gen8IM"
+  default     = "GP_Gen5"
 }
 
 variable "vcores" {
   description = "The number of vCores for the SQL Managed Instance."
   type        = number
-  default     = 8
+  default     = 4
 }
 
 variable "storage_size_in_gb" {
   description = "The storage size in GB for the SQL Managed Instance."
   type        = number
-  default     = 448
+  default     = 32
 }
