@@ -10,20 +10,6 @@ resource "azurerm_network_security_group" "sql-nsg" {
 }
 
 
-resource "azurerm_network_security_rule" "allow_management_inbound" {
-  name                        = "allow_management_inbound"
-  priority                    = 100
-  direction                   = "Inbound"
-  access                      = "Allow"
-  protocol                    = "Tcp"
-  source_port_range           = "*"
-  destination_port_ranges     = ["9000", "9003", "1438", "1440", "1452"]
-  source_address_prefix       = "*"
-  destination_address_prefix  = "*"
-  resource_group_name         = azurerm_resource_group.az-rg-details.name
-  network_security_group_name = azurerm_network_security_group.sql-nsg.name
-}
-
 resource "azurerm_network_security_rule" "allow_misubnet_inbound" {
   name                        = "allow_misubnet_inbound"
   priority                    = 200
