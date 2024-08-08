@@ -152,7 +152,7 @@ resource "azurerm_subnet_route_table_association" "sql-subnet-route-table-associ
   route_table_id = azurerm_route_table.sql-route-table.id
 }
 
-resource "azurerm_mssql_managed_instance" "sql-instance" {
+resource "azurerm_mssql_managed_instance" "claims-admin" {
   name                         = var.sql_instance_name
   resource_group_name          = azurerm_resource_group.az-rg-details.name
   location                     = azurerm_resource_group.az-rg-details.location
