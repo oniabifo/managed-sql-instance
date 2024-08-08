@@ -7,19 +7,19 @@ variable "resource_group_name" {
 variable "location" {
   description = "The Azure location where resources will be created."
   type        = string
-  default     = "Canada Central"
+  default     = "West Europe"
 }
 
 variable "vnet_name" {
   description = "The name of the virtual network."
   type        = string
-  default     = "sql-vnet-prod-uscentral-001"
+  default     = "sql-vnet"
 }
 
 variable "subnet_name" {
   description = "The name of the subnet."
   type        = string
-  default     = "sql-subnet-prod-uscentral-001"
+  default     = "sql-subnet"
 }
 
 variable "admin_login" {
@@ -43,17 +43,17 @@ variable "sql_instance_name" {
 variable "sku_name" {
   description = "The SKU name of the SQL Managed Instance."
   type        = string
-  default     = "GP_Gen8IM"
+  default     = "GP_Gen5"
 }
 
 variable "vcores" {
   description = "The number of vCores for the SQL Managed Instance."
   type        = number
-  default     = 8
+  default     = 4
 }
 
 variable "storage_size_in_gb" {
   description = "The storage size in GB for the SQL Managed Instance."
   type        = number
-  default     = 448
+  default     = 32
 }
