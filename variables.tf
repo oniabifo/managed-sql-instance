@@ -7,7 +7,7 @@ variable "resource_group_name" {
 variable "location" {
   description = "The Azure location where resources will be created."
   type        = string
-  default     = "South Central US"
+  default     = "East US"
 }
 
 variable "vnet_name" {
