@@ -66,6 +66,20 @@ resource "azurerm_network_security_rule" "allow_on_premises_inbound" {
   network_security_group_name = azurerm_network_security_group.sql-nsg.name
 }
 
+resource "azurerm_network_security_rule" "allow_management_inbound" {
+  name                        = "allow_management_inbound"
+  priority                    = 106
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_ranges     = ["9000", "9003", "1438", "1440", "1452"]
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = azurerm_resource_group.az-rg-details.name
+  network_security_group_name = azurerm_network_security_group.sql-nsg.name
+}
+
 
 resource "azurerm_network_security_rule" "deny_all_inbound" {
   name                        = "deny_all_inbound"
@@ -94,6 +108,21 @@ resource "azurerm_network_security_rule" "allow_misubnet_outbound" {
   resource_group_name         = azurerm_resource_group.az-rg-details.name
   network_security_group_name = azurerm_network_security_group.sql-nsg.name
 }
+
+resource "azurerm_network_security_rule" "allow_management_outbound" {
+  name                        = "allow_management_outbound"
+  priority                    = 102
+  direction                   = "Outbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_ranges     = ["80", "443", "12000"]
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = azurerm_resource_group.az-rg-details.name
+  network_security_group_name = azurerm_network_security_group.sql-nsg.name
+}
+
 
 resource "azurerm_network_security_rule" "deny_all_outbound" {
   name                        = "deny_all_outbound"
@@ -164,8 +193,8 @@ resource "azurerm_mssql_managed_instance" "claims-admin" {
   vcores                       = var.vcores
   storage_size_in_gb           = var.storage_size_in_gb
 
-  # depends_on = [
-  #   azurerm_subnet_network_security_group_association.sql-subnet-nsg-association,
-  #   azurerm_subnet_route_table_association.sql-subnet-route-table-association,
-  # ]
+  depends_on = [
+    azurerm_subnet_network_security_group_association.sql-subnet-nsg-association,
+    azurerm_subnet_route_table_association.sql-subnet-route-table-association,
+  ]
 }

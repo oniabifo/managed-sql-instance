@@ -37,23 +37,23 @@ variable "admin_password" {
 variable "sql_instance_name" {
   description = "The name of the SQL Managed Instance."
   type        = string
-  default     = "eclaimsrds"
+  default     = "win-a-sql-a"
 }
 
 variable "sku_name" {
   description = "The SKU name of the SQL Managed Instance."
   type        = string
-  default     = "GP_Gen5"
+  default     = "GP_Gen5_8"
 }
 
 variable "vcores" {
   description = "The number of vCores for the SQL Managed Instance."
   type        = number
-  default     = 4
+  default     = 8
 }
 
 variable "storage_size_in_gb" {
   description = "The storage size in GB for the SQL Managed Instance."
   type        = number
-  default     = 32
+  default     = 480
 }
