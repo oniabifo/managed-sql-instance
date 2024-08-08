@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   description = "The name of the resource group."
   type        = string
-  default     = "sql-rg"
+  default     = "clickclaims-prod-01"
 }
 
 variable "location" {
@@ -13,13 +13,13 @@ variable "location" {
 variable "vnet_name" {
   description = "The name of the virtual network."
   type        = string
-  default     = "sql-vnet"
+  default     = "sql-vnet-prod-uscentral-001"
 }
 
 variable "subnet_name" {
   description = "The name of the subnet."
   type        = string
-  default     = "sql-subnet"
+  default     = "sql-subnet-prod-uscentral-001"
 }
 
 variable "admin_login" {
@@ -43,13 +43,13 @@ variable "sql_instance_name" {
 variable "sku_name" {
   description = "The SKU name of the SQL Managed Instance."
   type        = string
-  default     = "GP_Gen5"
+  default     = "GP_Gen5_8"
 }
 
 variable "vcores" {
   description = "The number of vCores for the SQL Managed Instance."
   type        = number
-  default     = 4
+  default     = 8
 }
 
 variable "storage_size_in_gb" {
