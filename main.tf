@@ -9,9 +9,10 @@ resource "azurerm_network_security_group" "sql-nsg" {
   resource_group_name = azurerm_resource_group.az-rg-details.name
 }
 
+
 resource "azurerm_network_security_rule" "allow_management_inbound" {
   name                        = "allow_management_inbound"
-  priority                    = 106
+  priority                    = 100
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
