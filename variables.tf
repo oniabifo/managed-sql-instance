@@ -49,11 +49,11 @@ variable "sku_name" {
 variable "vcores" {
   description = "The number of vCores for the SQL Managed Instance."
   type        = number
-  default     = 4
+  default     = 8
 }
 
 variable "storage_size_in_gb" {
   description = "The storage size in GB for the SQL Managed Instance."
   type        = number
-  default     = 192
+  default     = 448
 }
