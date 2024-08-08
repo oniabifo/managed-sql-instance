@@ -25,7 +25,7 @@ variable "subnet_name" {
 variable "admin_login" {
   description = "The administrator login for the SQL Managed Instance."
   type        = string
-  default     = "sqladmin"
+  default     = "claimsadmin"
 }
 
 variable "admin_password" {
@@ -37,7 +37,7 @@ variable "admin_password" {
 variable "sql_instance_name" {
   description = "The name of the SQL Managed Instance."
   type        = string
-  default     = "sql-instance"
+  default     = "eclaimsrds"
 }
 
 variable "sku_name" {
