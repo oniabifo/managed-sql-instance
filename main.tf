@@ -185,7 +185,7 @@ resource "azurerm_mssql_managed_instance" "sql-instance" {
   location                     = azurerm_resource_group.az-rg-details.location
   administrator_login          = var.admin_login
   administrator_login_password = var.admin_password
-  license_type                 = "BasePrice"
+  license_type                 = "LicenseIncluded"
   subnet_id                    = azurerm_subnet.sql-subnet.id
   sku_name                     = var.sku_name
   vcores                       = var.vcores
