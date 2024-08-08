@@ -25,7 +25,7 @@ variable "subnet_name" {
 variable "admin_login" {
   description = "The administrator login for the SQL Managed Instance."
   type        = string
-  default     = "claimsadmin"
+  default     = "eclaimsadmin"
 }
 
 variable "admin_password" {
