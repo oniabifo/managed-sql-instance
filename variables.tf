@@ -1,31 +1,31 @@
 variable "resource_group_name" {
   description = "The name of the resource group."
   type        = string
-  default     = "clickclaims-rgp-test-0001"
+  default     = "clickclaims-sql-rg-dev-01"
 }
 
 variable "location" {
   description = "The Azure location where resources will be created."
   type        = string
-  default     = "Canada Central"
+  default     = "centralus"
 }
 
 variable "vnet_name" {
   description = "The name of the virtual network."
   type        = string
-  default     = "sql-vnet"
+  default     = "managed-sql-vnet-dev-01"
 }
 
 variable "subnet_name" {
   description = "The name of the subnet."
   type        = string
-  default     = "sql-subnet"
+  default     = "managed-sql-dev-subnet-01"
 }
 
 variable "admin_login" {
   description = "The administrator login for the SQL Managed Instance."
   type        = string
-  default     = "eclaimsadmin"
+  default     = "eclaimadmin"
 }
 
 variable "admin_password" {
@@ -37,7 +37,7 @@ variable "admin_password" {
 variable "sql_instance_name" {
   description = "The name of the SQL Managed Instance."
   type        = string
-  default     = "win-a-sql-a"
+  default     = "mi-sql-dev-01"
 }
 
 variable "sku_name" {
@@ -49,11 +49,17 @@ variable "sku_name" {
 variable "vcores" {
   description = "The number of vCores for the SQL Managed Instance."
   type        = number
-  default     = 4
+  default     = 8
 }
 
 variable "storage_size_in_gb" {
   description = "The storage size in GB for the SQL Managed Instance."
   type        = number
-  default     = 32
+  default     = 608
+}
+
+variable "network-sec-group" {
+  description = "The name of the network security group"
+  type        = number
+  default     = "sql-nsg-dev-001"
 }
