@@ -205,7 +205,7 @@ resource "azurerm_mssql_managed_instance" "claims-admin" {
   sku_name                     = var.sku_name
   vcores                       = var.vcores
   storage_size_in_gb           = var.storage_size_in_gb
-  timezone_id = "America/Indianapolis"
+  timezone_id = "UTC"
   depends_on = [
     azurerm_subnet_network_security_group_association.sql-subnet-nsg-association,
     azurerm_subnet_route_table_association.sql-subnet-route-table-association,
