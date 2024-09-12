@@ -57,9 +57,3 @@ variable "storage_size_in_gb" {
   type        = number
   default     = 608
 }
-
-variable "network-sec-group" {
-  description = "The name of the network security group"
-  type        = number
-  default     = "sql-nsg-dev-001"
-}
