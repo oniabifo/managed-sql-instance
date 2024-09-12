@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "az-rg-details" {
 }
 
 resource "azurerm_network_security_group" "sql-nsg" {
-  name                = "sql-nsg-dev-01"
+  name                = "sql-nsg-dev"
   location            = azurerm_resource_group.az-rg-details.location
   resource_group_name = azurerm_resource_group.az-rg-details.name
 }
@@ -80,7 +80,7 @@ resource "azurerm_network_security_rule" "allow_management_inbound" {
   network_security_group_name = azurerm_network_security_group.sql-nsg.name
 }
 
-resource "azurerm_network_security_rule" "allow_on_premises_inbound" {
+resource "azurerm_network_security_rule" "allow_data_center_inbound" {
   name                        = "allow_data_center_inbound"
   priority                    = 107
   direction                   = "Inbound"
