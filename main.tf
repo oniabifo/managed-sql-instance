@@ -194,7 +194,7 @@ resource "azurerm_subnet_route_table_association" "sql-subnet-route-table-associ
   route_table_id = azurerm_route_table.sql-route-table.id
 }
 
-# resource "azurerm_mssql_managed_instance" "claims-admin" {
+# resource "azurerm_mssql_managed_instance" "sql" {
 #   name                         = var.sql_instance_name
 #   resource_group_name          = azurerm_resource_group.az-rg-details.name
 #   location                     = azurerm_resource_group.az-rg-details.location
@@ -205,7 +205,7 @@ resource "azurerm_subnet_route_table_association" "sql-subnet-route-table-associ
 #   sku_name                     = var.sku_name
 #   vcores                       = var.vcores
 #   storage_size_in_gb           = var.storage_size_in_gb
-#   timezone_id = "Eastern Standard Time"
+#   timezone_id        = "Eastern Standard Time"
 #   depends_on = [
 #     azurerm_subnet_network_security_group_association.sql-subnet-nsg-association,
 #     azurerm_subnet_route_table_association.sql-subnet-route-table-association,
