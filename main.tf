@@ -194,20 +194,20 @@ resource "azurerm_subnet_route_table_association" "sql-subnet-route-table-associ
   route_table_id = azurerm_route_table.sql-route-table.id
 }
 
-# resource "azurerm_mssql_managed_instance" "sql" {
-#   name                         = var.sql_instance_name
-#   resource_group_name          = azurerm_resource_group.az-rg-details.name
-#   location                     = azurerm_resource_group.az-rg-details.location
-#   administrator_login          = var.admin_login
-#   administrator_login_password = var.admin_password
-#   license_type                 = "BasePrice"
-#   subnet_id                    = azurerm_subnet.sql-subnet.id
-#   sku_name                     = var.sku_name
-#   vcores                       = var.vcores
-#   storage_size_in_gb           = var.storage_size_in_gb
-#   timezone_id        = "Eastern Standard Time"
-#   depends_on = [
-#     azurerm_subnet_network_security_group_association.sql-subnet-nsg-association,
-#     azurerm_subnet_route_table_association.sql-subnet-route-table-association,
-#   ]
-# }
+resource "azurerm_mssql_managed_instance" "sql" {
+  name                         = var.sql_instance_name
+  resource_group_name          = azurerm_resource_group.az-rg-details.name
+  location                     = azurerm_resource_group.az-rg-details.location
+  administrator_login          = var.admin_login
+  administrator_login_password = var.admin_password
+  license_type                 = "BasePrice"
+  subnet_id                    = azurerm_subnet.sql-subnet.id
+  sku_name                     = var.sku_name
+  vcores                       = var.vcores
+  storage_size_in_gb           = var.storage_size_in_gb
+  timezone_id        = "Eastern Standard Time"
+  depends_on = [
+    azurerm_subnet_network_security_group_association.sql-subnet-nsg-association,
+    azurerm_subnet_route_table_association.sql-subnet-route-table-association,
+  ]
+}
